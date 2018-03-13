@@ -23,7 +23,7 @@
     "blockPushLevel": "Error"
   },
   "mockpreview": {
-    "mockUri": "/sap/opu/odata/sap/Z_TEAM_REGION_SRV",
+    "mockUri": "/sap/opu/odata/sap/Z_TEAM_REGION_SRV/",
     "metadataFilePath": "",
     "loadJSONFiles": false,
     "loadCustomRequests": false,
