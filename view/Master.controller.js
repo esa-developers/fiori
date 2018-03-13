@@ -1,6 +1,6 @@
 var that;
 var gDeleteInspId;
-this.gChangedInspsArr = [];
+var gChangedInspsArr = [];
 jQuery.sap.require("sap.ui.commons.MessageBox");
 sap.ui.define([
 	"Z_MANG_INSP_DT/view/BaseController",
