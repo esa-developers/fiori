@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+	id = "selectDialog"
+		title="Inspectors"
+		class="sapUiPopupWithPadding"
+		items="{sh_model>/ZshInspSet}"
+		search="handleInspValueHelpSearch"	
+		confirm="handleInspValueHelpClose"
+		>
+		<StandardListItem
+	
+			iconInset="false"
+			title="{sh_model>InspectorId}"
+			description="{sh_model>LastnameFirstname}, {sh_model>TeamId}, {sh_model>CellPhone}" />
+	</SelectDialog>
+</core:FragmentDefinition>

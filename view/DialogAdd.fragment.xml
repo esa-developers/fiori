@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">  
+    
+    <Dialog title="Add Data">  
+    <l:Grid defaultSpan="L12 M12 S12" width="auto" id="idGrid">  
+    <l:content>  
+        <f:SimpleForm id="formAdd" minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" title="Team Data" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="2" columnsM="2">  
+            <f:content>  
+                <Label text="Inspector ID"/>  
+                <Input id="i_INSP_ID" type="Number" maxLength="8" editable="true" required="true" showValueHelp="true" valueHelpRequest="handleInspValueHelp" />  
+                
+                <CheckBox id="i_WRM_COUNT_EXCLUDE" name="WRM_COUNT_EXCLUDE" text="WRM_COUNT_EXCLUDE"/> 
+
+                <Label text="WRM Availability days"/>  
+                <Input id="i_WRM_AVAIL_DAYS_OVR" type="Number" maxLength="10"/>  
+
+                <Label text="Vacation Days"/>  
+                <Input id="i_VACATION_DAYS" type="Number" maxLength="10"/> 
+
+                <Label text="Vacation Bonus Days"/>  
+                <Input id="i_VACATION_BONUS_DAYS" type="Number" maxLength="10"/> 
+
+                <Label text="Granted Days"/>  
+                <Input id="i_GRANTED_DAYS" type="Number" maxLength="10"/> 
+
+                <Label text="Floater Days"/>  
+                <Input id="i_FLOATER_DAYS" type="Number" maxLength="10"/> 
+
+                <Label text="Description"/>  
+                <Input id="i_DESCRIPTION" maxLength="254"/>                 
+                
+            </f:content>  
+        </f:SimpleForm>  
+    </l:content>  
+    </l:Grid>  
+    <buttons>  
+    <Button text="CLOSE" press="closeDialog" type="Reject"/>  
+    <Button text="SAVE" press="onAdd" type="Accept"/>  
+    </buttons>  
+    </Dialog>  
+</core:FragmentDefinition>

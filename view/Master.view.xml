@@ -1,0 +1,87 @@
+<core:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:table="sap.ui.table" id="masterview" controllerName="Z_MANG_INSP_DT.view.Master">
+	<Page id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>worklistViewTitle}">
+		<content>
+			<Table id="inspTable" width="auto" items="{ path: '/ZCFG_INSPECTORSet', sorter: { path: 'InspId', descending: false } }" noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="false" updateFinished="onUpdateFinished" fixedLayout="false" delete="onDeletePress" mode="Delete" rememberSelections="false" modeAnimationOn="false" growingScrollToLoad="false" keyboardMode="Edit">
+				<headerToolbar>
+					<Toolbar>
+						<Title id="title" text="{worklistView>/worklistTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>worklistSearchTooltip}" width="auto" visible="true" search="onSearchPressed"/>
+						<Button text="SAVE ALL" width="150px" id="button_SAVE" type="Accept" press="onSaveAll" icon="sap-icon://save"/>
+						<Button text="ADD" width="100px" id="button_ADD" press="handleOpenDialog" icon="sap-icon://add" type="Accept"/>
+						<Button text="EXPORT" width="100px" id="button_EXPORT" press="onDataExport" icon="sap-icon://excel-attachment" type="Emphasized"/>
+						
+						<content/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="nameColumn">
+						<Label text="{i18n>tableNameColumnTitle}" id="nameColumnTitle" design="Bold" tooltip="{i18n>tableNameColumnTitle}"/>
+					</Column>
+					
+					<Column id="column_name">
+						<header>
+							<Label text="Name" id="label_name" design="Bold" tooltip="{/#ZCFG_INSPECTOR/Name/@sap:label}"/>
+						</header>
+					</Column>					
+					
+					<Column id="__column0">
+						<header>
+							<Label text="{i18n>WRM_COUNT_EXCLUDE}" id="__label0" design="Bold" tooltip="{/#ZCFG_INSPECTOR/WrmCountExclude/@sap:label}"/>
+						</header>
+					</Column>
+					<Column id="__column1">
+						<header>
+							<Label text="{i18n>WRM_AVAIL_DAYS_OVR}" id="__label1" design="Bold" tooltip="{/#ZCFG_INSPECTOR/WrmAvailDaysOvr/@sap:label}"/>
+						</header>
+					</Column>
+					<Column id="__column2">
+						<header>
+							<Label text="{i18n>VACATION_DAYS}" id="__label2" design="Bold" tooltip="{/#ZCFG_INSPECTOR/VacationDays/@sap:label}"/>
+						</header>
+					</Column>
+					<Column id="__column3">
+						<header>
+							<Label text="{i18n>VACATION_BONUS_DAYS}" id="__label3" design="Bold" tooltip="{/#ZCFG_INSPECTOR/VacationBonusDays/@sap:label}"/>
+						</header>
+					</Column>
+					<Column id="__column5">
+						<header>
+							<Label text="{i18n>GRANTED_DAYS}" design="Bold" id="__label5" tooltip="{/#ZCFG_INSPECTOR/GrantedDays/@sap:label}"/>
+						</header>
+					</Column>
+					<Column id="floaterdays">
+						<header>
+							<Label text="{i18n>FLOATER_DAYS}" design="Bold" id="__label6" tooltip="{/#ZCFG_INSPECTOR/FloaterDays/@sap:label}"/>
+						</header>
+					</Column>					
+					<Column id="__column4">
+						<header>
+							<Label text="{i18n>DESCRIPTION}" design="Bold" id="__label4"/>
+						</header>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Navigation">
+						<!-- <ColumnListItem type="Navigation" press="onPress" > -->
+						<cells>
+							<ObjectIdentifier title="{InspId}"/>
+							<Label id="name" text="{Name}" width="200px"/>
+							<CheckBox selected="{WrmCountExclude}" id="__box0" editable="true" select="onFieldValueChange"/>
+							<!-- <Input value="{WrmAvailDaysOvr}" width="100%" id="__input0" editable="false"/> -->
+							<Input value="{WrmAvailDaysOvr}" id="__input5" change="onFieldValueChange"/>
+							<Input value="{VacationDays}" maxLength="10" id="__input1" change="onFieldValueChange"/>
+							<Input value="{VacationBonusDays}" maxLength="10" width="100%" id="__input2" change="onFieldValueChange"/>
+							<Input value="{GrantedDays}" maxLength="10" width="100%" id="__input4" change="onFieldValueChange"/>
+							<Input value="{FloaterDays}" maxLength="10" width="100%" id="__input6" change="onFieldValueChange"/>
+							<Input value="{Description}" maxLength="240" width="100%" id="__input3" change="onFieldValueChange"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+	<!--
+	<Dialog title="{i18n>UME_SELFREGISTRATION_TITLE}" icon="sap-icon://activity-individual" id="updateDialog" contentWidth="96%" contentHeight="96%" stretchOnPhone="true"/>
+	-->
+</core:View>

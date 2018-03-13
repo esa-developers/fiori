@@ -1,0 +1,12 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="Z_SEARCH_HELP_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="ZshInsp" sap:content-version="1">
+				<Key><PropertyRef Name="InspectorId"/></Key><Property Name="TeamId" Type="Edm.String" Nullable="false" MaxLength="8" sap:creatable="false" sap:updatable="false"/><Property Name="InspectorId" Type="Edm.String" Nullable="false" MaxLength="8" sap:creatable="false" sap:updatable="false"/><Property Name="LastnameFirstname" Type="Edm.String" Nullable="false" MaxLength="81" sap:creatable="false" sap:updatable="false"/><Property Name="CellPhone" Type="Edm.String" Nullable="false" MaxLength="40" sap:creatable="false" sap:updatable="false"/><Property Name="EMail" Type="Edm.String" Nullable="false" MaxLength="241" sap:creatable="false" sap:updatable="false"/></EntityType>
+			<EntityContainer Name="Z_SEARCH_HELP_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZshInspSet" EntityType="Z_SEARCH_HELP_SRV.ZshInsp" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/></EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
+				href="https://webide-p014971trial.dispatcher.hanatrial.ondemand.com/destinations/D60/sap/opu/odata/sap/Z_SEARCH_HELP_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="https://webide-p014971trial.dispatcher.hanatrial.ondemand.com/destinations/D60/sap/opu/odata/sap/Z_SEARCH_HELP_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
