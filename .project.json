@@ -1,0 +1,54 @@
+{
+  "dataBinding": {
+    "/view/Master.view.xml": {
+      "entitySet": "ZCFG_TEAM_REGIONSet"
+    }
+  },
+  "generation": [
+    {
+      "templateId": "sap.ui.ui5-template-plugin.1worklist",
+      "templateVersion": "1.26",
+      "dateTimeStamp": "Sun, 15 May 2016 22:52:58 GMT"
+    },
+    {
+      "templateId": "servicecatalog.connectivityComponent",
+      "templateVersion": "0.0.0",
+      "dateTimeStamp": "Sun, 08 Oct 2017 23:52:21 GMT"
+    }
+  ],
+  "codeCheckingTriggers": {
+    "notifyBeforePush": true,
+    "notifyBeforePushLevel": "Error",
+    "blockPush": false,
+    "blockPushLevel": "Error"
+  },
+  "mockpreview": {
+    "mockUri": "/sap/opu/odata/sap/Z_TEAM_REGION_SRV",
+    "metadataFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  },
+  "basevalidator": {
+    "services": {
+      "xml": "fioriXmlAnalysis",
+      "js": "fioriJsValidator"
+    }
+  },
+  "deploy": {
+    "destination": "D60",
+    "name": "Z_UPD_TEAM_RGN"
+  },
+  "hcpdeploy": {
+    "account": "p014971trial",
+    "name": "zupdtzcfgteamregion",
+    "lastVersionWeTriedToDeploy": "1.0.0"
+  }
+}

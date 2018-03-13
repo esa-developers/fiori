@@ -1,0 +1,95 @@
+<core:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:table="sap.ui.table" id="masterview" controllerName="Z_UPDT_ZCFG_TEAM_REGION.view.Master">
+	<Page id="productListPage" title="{i18n>masterTitle}" showNavButton="false" navButtonPress="onNavBack">
+		<content>
+
+<!-- <Table id="teamTable" width="auto" items="{ path: '/ZCFG_TEAM_REGIONSet', sorter: { path: 'TeamId', descending: false } }" noDataText="{worklistView>/tableNoDataText}" growing="false" growingScrollToLoad="true" keyboardMode="Edit" mode="Delete" delete="onDeletePress" modeAnimationOn="false" updateFinished="onUpdateFinished" fixedLayout="false"> -->
+
+<Table id="teamTable" items="{/ZCFG_TEAM_REGIONSet}" growing="false" growingScrollToLoad="false" keyboardMode="Edit" mode="Delete" delete="onDeletePress" updateFinished="onUpdateFinished" fixedLayout="false">
+
+	
+
+				<headerToolbar id="teamTable_headerToolbar">
+					<Toolbar id="tableToolbar">
+						<!--<Label id="catalogTitle" text="Inspectors Teams data" class="sapMH4FontSize" visible="{viewProperties>/catalogTitleVisible}"/>-->
+						<Title id="title"/>
+						
+		
+					
+						
+						
+						<ToolbarSpacer id="toolbarSpacer"/>
+						<Select id="selectYear" change="onYearSelect"  selectedKey="2016" selectedItemId="__2016">
+						    <items>
+						        <core:ListItem text="2016" key="2016" id="__2016"/>
+						        <core:ListItem text="2017" key="2017" id="__2017"/>
+						        <core:ListItem text="2018" key="2018" id="__2018"/>
+						        <core:ListItem text="2019" key="2019" id="__2019"/>
+						        <core:ListItem text="2020" key="2020" id="__2020"/>
+						        <core:ListItem text="2021" key="2021" id="__2021"/>
+								<core:ListItem text="2022" key="2022" id="__2022"/>
+								<core:ListItem text="2023" key="2023" id="__2023"/>
+								<core:ListItem text="2024" key="2024" id="__2024"/>
+								<core:ListItem text="2025" key="2025" id="__2025"/>						        	
+						        </items>
+						</Select>
+						<SearchField id="searchField" showRefreshButton="false" placeholder="{i18n>masterSearchPlaceholder}" tooltip="{i18n>masterSearchTooltip}" search="onSearchPressed" width="{viewProperties>/searchFieldWidth}"/>
+						<Button text="SAVE ALL" width="150px" id="button_SAVE" type="Accept" press="onSaveAll" icon="sap-icon://save"/>
+						<Button text="ADD" width="100px" id="button_ADD" press="handleOpenDialogAdd" icon="sap-icon://add" type="Accept"/>
+						<Button text="EXPORT" width="100px" id="button_EXPORT" press="onDataExport" icon="sap-icon://excel-attachment" type="Emphasized"/>					
+					<content/>
+					</Toolbar>
+				</headerToolbar>
+				<columns id="teamTable_columns" rowHeight="1">
+					<Column id="teamTable_col1" width="{viewProperties>/availabilityColumnWidth}" hAlign="Left">
+						<header id="teamTable_col1_header">
+							<Label id="teamTable_col1_label" text="Team ID" design="Bold"/>
+						</header>
+					</Column>
+					<Column xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table" id="teamTable_col2_copy" width="{viewProperties>/availabilityColumnWidth}" hAlign="Left">
+					    <header id="teamTable_col2_header_copy">
+					        <Label id="teamTable_col2_label_copy" text="Year" design="Bold"/>
+					        
+					    </header>
+					    
+					</Column>
+					<Column xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table" id="teamTable_col2_copy5" width="{viewProperties>/availabilityColumnWidth}" hAlign="Left">
+					    <header id="teamTable_col2_header_copy4">
+					        <Label id="teamTable_col2_label_copy5" text="Adjustment Days" design="Bold"/>
+					        
+					    </header>
+					    
+					</Column>
+					<Column xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table" id="teamTable_col2_copy2" width="{viewProperties>/availabilityColumnWidth}" hAlign="Left">
+					    <header id="teamTable_col2_header_copy2">
+					        <Label id="teamTable_col2_label_copy2" text="Notes" design="Bold"/>
+					        
+					    </header>
+					    
+					</Column>
+					
+				</columns>
+				<ColumnListItem id="columnListItem" vAlign="Middle" >
+					<cells id="columnListItem_cells">
+						<Text id="columnListItem_cell_1" text="{TeamId}" maxLines="1"/>
+						<!--<ObjectNumber id="columnListItem_cell_3" number="{DataYear}" emphasized="false"/>-->
+						<Text id="columnListItem_cell_2" text="{DataYear}" maxLines="1"/>
+						<Input value="{TeamWrmAdjDays}" maxLength="10" width="100%" id="__input4" change="onFieldValueChange"/>
+						<Input value="{Notes}" maxLength="100" width="200px" id="__input5" change="onFieldValueChange" />
+						<!--
+						<ObjectNumber xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table" id="columnListItem_cell_3_copy2" number="{TeamWrmAdjDays}" emphasized="false"/>
+						<ObjectNumber xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table" id="columnNotes" number="{Notes}" emphasized="false"/>
+						-->
+						<!--<ObjectStatus id="columnListItem_cell_4" text="" state="None"/> -->
+					</cells>
+				</ColumnListItem>
+			</Table>
+		</content>
+		<footer/>
+	</Page>
+	<!--
+    <Dialog title="{i18n>UME_SELFREGISTRATION_TITLE}" icon="sap-icon://activity-individual" id="updateDialog" contentWidth="96%" contentHeight="96%" stretchOnPhone="true">
+
+</Dialog>
+	-->
+	
+</core:View>

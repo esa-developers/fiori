@@ -1,0 +1,38 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Dialog title="Add Data">
+		<l:Grid defaultSpan="L12 M12 S12" width="auto" id="idGrid">
+			<l:content>
+				<f:SimpleForm id="formAdd" minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" title="Team Data"
+					labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="2" columnsM="2">
+					<f:content>
+						<Label text="Team ID"/>
+						<Input id="idTeamId" editable="true" required="true"/>
+						<Label text="Date Year"/>
+						<Select id="idDataYear"  selectedItemId="__2017">
+							<items>
+								<core:ListItem text="2016" key="2016" id="__2016"/>
+								<core:ListItem text="2017" key="2017" id="__2017"/>
+								<core:ListItem text="2018" key="2018" id="__2018"/>
+								<core:ListItem text="2019" key="2019" id="__2019"/>
+								<core:ListItem text="2020" key="2020" id="__2020"/>
+								<core:ListItem text="2021" key="2021" id="__2021"/>
+								<core:ListItem text="2022" key="2022" id="__2022"/>
+								<core:ListItem text="2023" key="2023" id="__2023"/>
+								<core:ListItem text="2024" key="2024" id="__2024"/>
+								<core:ListItem text="2025" key="2025" id="__2025"/>
+							</items>
+						</Select>
+						<Label text="Adjustment Days"/>
+						<Input id="idAdjustmentDays"/>
+						<Label text="Notes"/>
+						<Input id="idNotes"/>
+					</f:content>
+				</f:SimpleForm>
+			</l:content>
+		</l:Grid>
+		<buttons>
+			<Button text="CLOSE" press="closeDialog" type="Reject"/>
+			<Button text="SAVE" press="onAdd" type="Accept"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

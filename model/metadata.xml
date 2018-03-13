@@ -1,0 +1,28 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="Z_TEAM_REGION_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="ZCFG_TEAM_REGION" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TeamId"/>
+                </Key>
+                <Property Name="DataYear" Type="Edm.String" MaxLength="4" sap:filterable="false"/>
+                <Property Name="DateFrom" Type="Edm.DateTime" Precision="7" sap:filterable="false"/>
+                <Property Name="TeamId" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="DateTo" Type="Edm.DateTime" Precision="7" sap:filterable="false"/>
+                <Property Name="TeamWrmAdjDays" Type="Edm.Decimal" Precision="7" Scale="2" sap:filterable="false"/>
+                <Property Name="Notes" Type="Edm.String" MaxLength="100"/>
+            </EntityType>
+            <EntityContainer Name="Z_TEAM_REGION_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZCFG_TEAM_REGIONSet" EntityType="Z_TEAM_REGION_SRV.ZCFG_TEAM_REGION" sap:searchable="true" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/Z_TEAM_REGION_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/Z_TEAM_REGION_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>
