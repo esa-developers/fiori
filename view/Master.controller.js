@@ -1,6 +1,6 @@
 var that;
 var gDeleteInspId;
-var gChangedInspsArr = [];
+//var gChangedInspsArr = [];
 jQuery.sap.require("sap.ui.commons.MessageBox");
 sap.ui.define([
 	"Z_MANG_INSP_DT/view/BaseController",
@@ -12,7 +12,8 @@ sap.ui.define([
 	"sap/ui/core/util/ExportTypeCSV"
 ], function(BaseController, JSONModel, formatter) {
 	"use strict";
-
+	
+	BaseController.gChangedInspsArr = []; //Works like a Global Variable
 	return BaseController.extend("Z_MANG_INSP_DT.view.Master", {
 
 		formatter: formatter,
@@ -24,6 +25,7 @@ sap.ui.define([
 		 * @public
 		 */
 		onInit: function() {
+			
 			that = this;
 			var oViewModel, iOriginalBusyDelay, oTable = this.byId("inspTable");
 			// Put down worklist table's original value for busy indicator delay,
@@ -314,7 +316,11 @@ sap.ui.define([
 			oTable.getItems().forEach(function(row) {
 				var oEntry = {};
 				var obj = row.getBindingContext().getObject();
-				if (this.gChangedInspsArr.indexOf(obj.InspId) > -1) { //If record was changed
+				
+				//BaseController.gChangedInspsArr
+				
+				
+				if (BaseController.gChangedInspsArr.indexOf(obj.InspId) > -1) { //If record was changed
 					//if (obj.InspId ) {
 
 					var cells = row.getCells();
@@ -344,7 +350,7 @@ sap.ui.define([
 
 				success: function(oData, oResponse) {
 					//	that.onNavBack();
-					this.gChangedInspsArr = [];
+					BaseController.gChangedInspsArr.length = 0;
 					//oModel.refresh();
 					sap.m.MessageToast.show("Records Updated");
 				},
@@ -369,7 +375,7 @@ sap.ui.define([
 			///console.log(oControlEvent.getSource().getBindingContext().getPath()); //gets the current index of your table row                
 
 			//Add Change Inspector to Array
-			this.gChangedInspsArr.push(obj.InspId);
+			BaseController.gChangedInspsArr.push(obj.InspId);
 
 		},
 
